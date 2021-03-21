@@ -1,7 +1,8 @@
 import React from 'react'
-import './home.scss'
+import {Link} from 'react-router-dom'
+import './homeBody.scss'
 
-class Home extends React.Component{
+class HomeBody extends React.Component{
     render(){
         return(
             <div className = 'home'>
@@ -14,11 +15,14 @@ class Home extends React.Component{
                     </p>
                 </div>
                 <div className = 'btn'>
-                    Join Contest
+                    <Link to='/user/register'
+                    className='link'>
+                        Join Contest
+                    </Link>
                 </div>
             </div>
         )
     }
 }
 
-export default Home
+export default HomeBody

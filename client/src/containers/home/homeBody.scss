@@ -3,7 +3,7 @@
 .home{
     background-color: $base-background;
     height: 90vh;
-    background-image: url('../../img/home-gif3.gif');
+    background-image: url('../../assets/img/home-gif3.gif');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -29,5 +29,8 @@
         border-radius: 3px;
         font-weight: 600;
         cursor: pointer;
+        .link{
+            color: black;
+        }
     }
 }

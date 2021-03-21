@@ -36,3 +36,9 @@ def getData():
     return{
         'message':'data is coming'
     }
+
+@app.route('/user/register', methods=['GET','POST'])
+def register():
+    return {
+        'message': 'true'
+    }
