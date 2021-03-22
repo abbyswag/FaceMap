@@ -7,6 +7,9 @@ import './voteBody.scss'
 class VoteBody extends React.Component{
     constructor(props){
         super()
+        this.state = {
+            users: []
+        }
         this.btnsData = [
             'Join Contest',
             'Shuffle'
@@ -18,12 +21,17 @@ class VoteBody extends React.Component{
         ]
     }
 
-    getUsers(){
+    componentDidMount(){
         fetch('http://127.0.0.1:5000/user/list')
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log(data.list)
+            this.setState({users: data.list})
         })
+    }
+
+    getImage(path){
+        return `http://127.0.0.1:5000/user/${path}`
     }
 
     render(){
@@ -45,12 +53,17 @@ class VoteBody extends React.Component{
                     />
                 </div>
                 <div className='cards'>
-                    <HorizontalCard
-                    name='Abhishek'
-                    score={23}
-                    careers={this.careerData}
-                    />
-                    {this.getUsers()}
+                    {this.state.users.map(user => {
+                        console.log('hello')
+                        return (
+                            <HorizontalCard
+                            name={user.name}
+                            score={user.score}
+                            imagePath={this.getImage(user.image)}
+                            careers={this.careerData}
+                            />
+                        )
+                    })}
                 </div>
             </div>
         )

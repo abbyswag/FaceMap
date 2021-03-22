@@ -21,6 +21,10 @@ class Header extends React.Component{
                     className = 'link nav-opt'>
                         Result
                     </Link>
+                    <Link to='/schedule'
+                    className = 'link nav-opt'>
+                        Schedule
+                    </Link>
                     <Link to='/about'
                     className='link nav-opt'>
                         About Us

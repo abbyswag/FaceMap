@@ -11,7 +11,7 @@
     justify-content: space-between;
     align-items: center;
     .content{
-        margin-top: 2rem;
+        margin-top: -9rem;
         color: #ffffff;
         text-align: center;
         .first-para{
@@ -22,15 +22,27 @@
             font-size: 1.1rem;
         }
     }
+    .status{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .status-bar{
+            margin: 3rem 3rem;
+        }
+    }
     .btn{
         margin-bottom: 3rem;
         padding: 0.8rem 1.3rem;
         background-color: $btn-background;
         border-radius: 3px;
         font-weight: 600;
+        transition: all .4s;
         cursor: pointer;
         .link{
             color: black;
         }
+    }
+    .btn:hover{
+        background-color: $hover-backgroud;
     }
 }

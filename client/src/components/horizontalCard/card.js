@@ -5,7 +5,10 @@ class HorizontalCard extends React.Component{
     render(){
         return(
             <div className='card'>
-                <div className='img'></div>
+                <div className='img'
+                style={{
+                    backgroundImage:`url(${this.props.imagePath})`
+                }}></div>
                 <div className='content'>
                     <div className='data'>
                         <div className='name'>

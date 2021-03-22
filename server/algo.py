@@ -4,13 +4,13 @@ import random
 class DataStructure:
     def __init__(self):
         self.users = []
-        self.votes = [] 
+        self.votes = []
 
-    def add(self, name, imgPath, email, career):
+    def add(self, name, image, email, career):
         self.users.append(
             {
                 'name': name,
-                'imgPath':imgPath,
+                'image':image,
                 'email':email,
                 'career': career,
                 'isVoted':False,

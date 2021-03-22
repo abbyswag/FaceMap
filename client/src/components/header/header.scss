@@ -12,7 +12,11 @@
         font-weight: 600;
         margin-left: 2rem;
         opacity: .8;
+        transition: opacity .4s;
         cursor: pointer;
+    }
+    .app-name:hover{
+        opacity: 1;
     }
     .nav-bar{
         display: flex;
@@ -24,10 +28,16 @@
             margin: 0 1rem;
             padding: .3rem .5rem;
             color: #ffffff;
+            font-weight: 500;
             // background-color: $btn-background;
             // border: solid $btn-background 2px;
             border-radius: 3px;
+            transition: all .4s;
             cursor: pointer;
+        }
+        .nav-opt:hover{
+            background-color: $hover-backgroud;
+            color: #000000;
         }
     }
 }
