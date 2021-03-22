@@ -24,7 +24,7 @@ class FormBody extends React.Component{
         event.preventDefault()
         const data = new FormData(event.target)
 
-        fetch('http://127.0.0.1:5000/user/register', {
+        fetch('/user/register', {
             method: 'POST',
             body: data
         })

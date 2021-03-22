@@ -22,7 +22,7 @@ class VoteBody extends React.Component{
     }
 
     componentDidMount(){
-        fetch('http://127.0.0.1:5000/user/list')
+        fetch('/user/list')
         .then(res => res.json())
         .then(data => {
             console.log(data.list)
@@ -31,7 +31,7 @@ class VoteBody extends React.Component{
     }
 
     getImage(path){
-        return `http://127.0.0.1:5000/user/${path}`
+        return `/user/${path}`
     }
 
     render(){
