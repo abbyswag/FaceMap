@@ -9,7 +9,7 @@ ds = DataStructure()
 
 @app.route('/')
 def index():
-    return render_template('/index.html')
+    return render_template('index.html')
 
 @app.route('/user/register', methods=['GET','POST'])
 def register():
