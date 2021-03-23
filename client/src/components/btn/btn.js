@@ -6,7 +6,7 @@ class Btn extends React.Component{
     render(){
         return(
             <div className='btn'>
-                <Link to='/user/register'
+                <Link to={this.props.link}
                     className='link'>
                     {this.props.name}    
                 </Link>

@@ -1,9 +1,28 @@
 @import '../../App.scss';
 
+.opt-card{
+    background-color: $third-background;
+    width: 250px;
+    border-radius: 5px;
+    // padding: .5rem 1rem;
+    .opt{
+        color:$main-color;
+        text-align: center;
+        padding: .5rem;
+        cursor: pointer;
+        transition: all .4s;
+    }
+    .opt:hover{
+        background-color: $second-background;
+        border-radius: 3px;
+    }
+}
+
 .card{
     background-color: $third-background;
     border-radius: 9px;
-    width: 250px;
+    width: 250px;   
+    // height: 375px;
     .img{
         width: 250px;
         height: 250px;
@@ -11,13 +30,18 @@
         background-size: cover;
     }
     .content{
-        // height: 90px;
+        // height: 125px;
+        border-radius: 0 0 9px 9px;
         background-color: $second-background;
-        color: $base-color;
-        padding: 1rem;
+        color: $main-color;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        transition: all .4s;
+        // padding: 1rem;
         opacity: .8;
         .data{
-            margin-bottom: 1rem;
+            // margin-bottom: 1rem;
+            padding: .5rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -27,7 +51,7 @@
                 font-weight: 500;
             }
             .score{
-                color: #4fd048;
+                color: $extra-color;
                 font-weight: 600;
                 span{
                     font-size: .9rem;
@@ -38,16 +62,31 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: .5rem;
-            select{
-                padding: .3rem .5rem;
+            padding: 0 1rem;
+            cursor: pointer;
+            .opt{
                 width: 100%;
-                border-radius: 3px;
-                font-size: 1rem;
-                option{
-                    padding: .3rem .5rem;
-                }
+                text-align: center;
+                padding: .5rem 0;
+                background-color: $btn-background;
+                color: $btn-color;
+                border-radius: 5px;
+            }
+
+        }
+        .status{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            padding: .5rem 1rem;
+            font-size: .9rem;
+            .submit{
+                width: fit-content;
+               cursor: pointer;
             }
         }
+    }
+    .content:hover{
+        opacity: 1;
     }
 }

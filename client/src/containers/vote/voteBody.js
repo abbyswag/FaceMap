@@ -7,31 +7,25 @@ import './voteBody.scss'
 class VoteBody extends React.Component{
     constructor(props){
         super()
-        this.state = {
-            users: []
+        this.state= {
+            users: [],
         }
-        this.btnsData = [
-            'Join Contest',
-            'Shuffle'
-        ]
-        this.careerData =[
-            'developer',
-            'musicians',
-            'dancer'
+        this.btnsData= [
+            ['Join Contest', '/user/register'],
+            ['shuffle', '/vote']
         ]
     }
 
     componentDidMount(){
-        fetch('/user/list')
+        fetch('http://localhost:5000/user/list')
         .then(res => res.json())
         .then(data => {
-            console.log(data.list)
             this.setState({users: data.list})
         })
     }
 
     getImage(path){
-        return `/user/${path}`
+        return `http://localhost:5000/user/${path}`
     }
 
     render(){
@@ -39,10 +33,11 @@ class VoteBody extends React.Component{
             <div className='vote-body'>
                 <div className='opts'>
                     <div className='btns'>
-                        {this.btnsData.map(btn => {
+                        {this.btnsData.map(data => {
                             return(
                                 <Btn
-                                name={btn}
+                                name={data[0]}
+                                link={data[1]}
                                 />
                             )
                         })}
@@ -54,13 +49,12 @@ class VoteBody extends React.Component{
                 </div>
                 <div className='cards'>
                     {this.state.users.map(user => {
-                        console.log('hello')
                         return (
                             <HorizontalCard
                             name={user.name}
                             score={user.score}
+                            email={user.email}
                             imagePath={this.getImage(user.image)}
-                            careers={this.careerData}
                             />
                         )
                     })}
