@@ -1,0 +1,52 @@
+@import '../../App.scss';
+
+.result-body{
+    background-color: $base-background;
+    background-image: url('../../assets/img/home-gif3.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+    .notice{
+        color: $main-color;
+        opacity: .8;
+        text-align: center;
+        padding: 1rem;
+    }
+    .search{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+        input{
+            padding: .5rem;
+            font-size: .9rem;
+            background-color: $base-background;
+            border: solid $btn-background 2px;
+            color: $main-color;
+            width: 30%;
+            border-radius: 3px 0 0 3px;
+        }
+        .btn{
+            border-radius: 0 3px 3px 0;
+            transition: all .4s;
+        }
+        .btn:hover{
+            background-color: $extra-color;
+        }
+        .btn:active{
+            border: inset $second-background 2px;
+        }
+    }
+    .lable{
+        margin-top: 1rem;
+        color: $extra-color;
+        font-size: 2rem;
+        text-align: center;
+        padding: 1rem;
+    }
+    .results{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(1fr, 5);
+    }
+}

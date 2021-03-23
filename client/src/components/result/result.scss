@@ -1,0 +1,51 @@
+@import '../../App.scss';
+
+.result{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    place-self: center;
+    width: 80%;
+    padding: .5rem 1rem;
+    margin: .5rem 0;
+    background-color: $third-background;
+    border-radius: 5px;
+    opacity: .8;
+    transition: all .4s;
+    .img{
+        background-color: $link-color;
+        margin-left: 1rem;
+        width: 4rem;
+        height: 4rem;
+        background-size: cover;
+        border-radius: 10px;
+    }
+    .name{
+        font-weight: 600;
+        color: $btn-background;
+        font-size: 1.5rem;
+        font-variant: small-caps;
+    }
+    .status{
+        position: relative;
+        .rank{
+            font-size: 1.5rem;
+            font-weight: 600;
+            font-style: italic;
+            position: absolute;
+            top: -2rem;
+            right: 1rem;
+        }
+        .score{
+            width: max-content;
+            position: absolute;
+            bottom: -2rem;
+            right: 1rem;
+            font-weight: 600;
+            color: $extra-color;
+        }
+    }
+}
+.result:hover{
+    opacity: 1;
+}

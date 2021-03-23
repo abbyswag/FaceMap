@@ -1,10 +1,52 @@
 import React from 'react'
+import Result from '../../components/result/result'
+import './resultBody.scss'
 
 class ResultBody extends React.Component{
+    constructor(props){
+        super()
+        this.state= {results: []}
+    }
+
+    componentDidMount(){
+        fetch('http://localhost:5000/result')
+        .then(res => res.json())
+        .then(data => {
+            this.setState({results: data.list})
+        })
+    }
+
+    getImage(path){
+        return `http://localhost:5000/user/${path}`
+    }
+
     render(){
         return(
-            <div>
-                result
+            <div className='result-body'>
+                <div className='notice'>
+                    Final result is with more details will released after the ending of contest.
+                </div>
+                <div className='search'>
+                    <input/>
+                    <div className='btn'>
+                        Search
+                    </div>
+                </div>
+                <div className='lable'>
+                    Live Ranking
+                </div>
+                <div className='results'>
+                    {this.state.results.map((result,index) => {
+                        return(
+                            <Result
+                            name={result.name}
+                            score={result.score}
+                            rank={index+1}
+                            imagePath={this.getImage(result.image)}
+                            />
+                        )
+                    })}
+                </div>
             </div>
         )
     }

@@ -48,7 +48,7 @@ class DbHandler:
             if user['email'] == userEmail:
                 user['score'] += self.getScore(user['career'],votedCareer)
             
-    def getTopUser(self,n = 10):
+    def getTopUser(self, n):
         results = []
         for i in range(n):
             maxScore = 0
