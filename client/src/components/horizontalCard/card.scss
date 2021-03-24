@@ -21,7 +21,9 @@
 .card{
     background-color: $third-background;
     border-radius: 9px;
-    width: 250px;   
+    width: 250px;
+    opacity: .8;
+    transition: all .4s;
     // height: 375px;
     .img{
         width: 250px;
@@ -89,4 +91,7 @@
     .content:hover{
         opacity: 1;
     }
+}
+.card:hover{
+    opacity: 1;
 }

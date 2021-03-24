@@ -6,15 +6,21 @@ class DbHandler:
         self.users = []
         self.votes = []
         self.careers = [
-            'Developer','Programmer','Musician','Dancer','Painter','Enterprenuer'
+            'Developer','Programmer','Musician','Dancer','Painter','Enterprenuer',
+            'Officer','Politician','Scientist','Comedian','Teacher'
         ]
         self.scoreBoard = [
-            [5, 0, 0, 0, 0, 0],
-            [0, 5, 0, 0, 0, 0],
-            [0, 0, 5, 0, 0, 0],
-            [0, 0, 0, 5, 0, 0],
-            [0, 0, 0, 0, 5, 0],
-            [0, 0, 0, 0, 0, 5]
+            [5, 3, 0, 0, 1, 1, 0, 0, 1, 0, 2],
+            [3, 5, 1, 0, 1, 0, 0, 0, 1, 0, 1],
+            [0, 1, 5, 1, 2, 3, 4, 0, 2, 0, 0],
+            [0, 0, 1, 5, 0, 4, 3, 2, 0, 1, 0],
+            [1, 1, 2, 0, 5, 1, 3, 0, 4, 0, 2],
+            [1, 1, 3, 4, 1, 5, 0, 2, 0, 4, 3],
+            [0, 0, 4, 3, 3, 0, 5, 2, 1, 3, 1],
+            [0, 0, 0, 2, 0, 2, 2, 5, 0, 2, 3],
+            [1, 1, 2, 0, 4, 0, 1, 0, 5, 0, 2],
+            [0, 0, 0, 1, 0, 4, 3, 2, 0, 5, 1],
+            [2, 1, 0, 0, 2, 3, 1, 3, 2, 1, 5]
         ]
 
     def addUser(self, name, image, email, career):
@@ -63,9 +69,23 @@ class DbHandler:
     def getRandomUsers(self, n):
         if len(self.users) >= n:
             result = []
-            for i in range(n):
+            while True:
                 user = random.choice(self.users)
                 if user not in result:
                     result.append(user)
+                if len(result) == n:
+                    break
             return result
         return random.choices(self.users, k = n)
+
+    def getTotalUsers(self):
+        return  len(self.users)
+
+    def getTotalVotes(self):
+        return len(self.votes)
+
+    def getMaxScore(self):
+        return self.getTopUser(1)[0]['score']
+
+    def getTopUserName(self):
+        return self.getTopUser(1)[0]['name']

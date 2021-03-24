@@ -18,7 +18,7 @@ class HorizontalCard extends React.Component{
     }
 
     submitData(){
-        fetch('http://localhost:5000/vote/register', {
+        fetch('/vote/register', {
             method: 'POST',
             headers: {
                 'content-type':'application/json'
@@ -32,6 +32,9 @@ class HorizontalCard extends React.Component{
         .then(data => {
             if(data.message === 'true'){
                 this.setState({status: 'Submitted'})
+            }
+            else{
+                this.setState({status: 'Not Submitted'})
             }
         })
         .catch(err => console.error(err))
@@ -51,9 +54,6 @@ class HorizontalCard extends React.Component{
     optCard(){
         return(
             <div className='opt-card'>
-                <div className='opt'>
-                    Careers
-                </div>
                 {career.data.map(career => {
                     return(
                         <div 
@@ -97,7 +97,7 @@ class HorizontalCard extends React.Component{
                         <div className='submit'
                         onClick={this.submitData}
                         >
-                            Submit
+                            {this.state.status}
                         </div>
                     </div>
                 </div>

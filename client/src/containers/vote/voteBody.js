@@ -17,7 +17,7 @@ class VoteBody extends React.Component{
     }
 
     componentDidMount(){
-        fetch('http://localhost:5000/user/list')
+        fetch('/user/list')
         .then(res => res.json())
         .then(data => {
             this.setState({users: data.list})
@@ -25,7 +25,7 @@ class VoteBody extends React.Component{
     }
 
     getImage(path){
-        return `http://localhost:5000/user/${path}`
+        return `/user/${path}`
     }
 
     render(){
@@ -43,8 +43,8 @@ class VoteBody extends React.Component{
                         })}
                     </div>
                     <StatusBar
-                    lable='Participats'
-                    status={123}
+                    lable='Contest Ends'
+                    status='12 : 43 : 13'
                     />
                 </div>
                 <div className='cards'>

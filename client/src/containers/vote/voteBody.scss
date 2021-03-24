@@ -2,6 +2,9 @@
 
 .vote-body{
     background-color: $base-background;
+    background-image: url(../../assets/img/home-gif3.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 90vh;
     .opts{
         display: flex;

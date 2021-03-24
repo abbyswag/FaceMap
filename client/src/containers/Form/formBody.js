@@ -4,6 +4,8 @@ import Canvas from '../../components/canvas/canvas'
 // import Input from '../../components/input/input'
 import './formBody.scss'
 
+const careers = require('../../assets/data/career.json')
+
 class FormBody extends React.Component{
     constructor(props){
         super()
@@ -24,7 +26,7 @@ class FormBody extends React.Component{
         event.preventDefault()
         const data = new FormData(event.target)
 
-        fetch('http://localhost:5000/user/register', {
+        fetch('/user/register', {
             method: 'POST',
             body: data
         })
@@ -37,8 +39,7 @@ class FormBody extends React.Component{
     handleRedirect(){
         if(this.state.message === 'true')return <Redirect to='/vote' />
         else return null
-    }
-    
+    }    
 
     render(){
         return(
@@ -74,12 +75,17 @@ class FormBody extends React.Component{
                             placeholder='Email Address'
                             required
                             />
-                            <input
-                            type='text'
-                            name='career'
-                            placeholder='Career'
-                            required
-                            />                            
+                            <select
+                            className='select'
+                            name='career'>
+                                {careers.data.map(career => {
+                                    return(
+                                        <option value={career}>
+                                            {career}
+                                        </option>
+                                    )
+                                })}
+                            </select>  
                         </div>
                         <div className='btn-wrapper'>
                             <button className='btn'

@@ -11,6 +11,15 @@ db = DbHandler()
 def index():
     return render_template('index.html')
 
+@app.route('/data')
+def sendData():
+    return{
+        'totalUsers': db.getTotalUsers(),
+        'totalVotes': db.getTotalVotes(),
+        'maxScore': db.getMaxScore(),
+        'topUser': db.getTopUserName()
+    }
+
 @app.route('/user/register', methods=['GET','POST'])
 def registerUser():
     if request.method == 'POST':
@@ -55,5 +64,5 @@ def registerVote():
 @app.route('/result')
 def getResult():
     return {
-        'list': db.getTopUser(5)
+        'list': db.getTopUser(6)
     }

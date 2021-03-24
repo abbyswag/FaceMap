@@ -9,7 +9,7 @@ class ResultBody extends React.Component{
     }
 
     componentDidMount(){
-        fetch('http://localhost:5000/result')
+        fetch('/result')
         .then(res => res.json())
         .then(data => {
             this.setState({results: data.list})
@@ -17,7 +17,7 @@ class ResultBody extends React.Component{
     }
 
     getImage(path){
-        return `http://localhost:5000/user/${path}`
+        return `/user/${path}`
     }
 
     render(){
