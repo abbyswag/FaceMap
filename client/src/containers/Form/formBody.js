@@ -1,7 +1,6 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 import Canvas from '../../components/canvas/canvas'
-// import Input from '../../components/input/input'
 import './formBody.scss'
 
 const careers = require('../../assets/data/career.json')
@@ -43,11 +42,16 @@ class FormBody extends React.Component{
 
     render(){
         return(
-            <div className = 'join-page'>
+            <div className = 'form-body'>
                 {this.handleRedirect()}
                 <form className = 'join-form'
                 onSubmit={this.handleSubmit}
                 >
+                    {/* <div className='note'>
+                        Already Joined: <span>
+                            <div>Login</div>
+                        </span>
+                    </div> */}
                     <div className = 'image-data'>
                         <Canvas
                         imgURL = {this.state.imgURL}

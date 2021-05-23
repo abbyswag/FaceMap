@@ -1,0 +1,24 @@
+@import '../../App.scss';
+
+.bottom-nav{
+    display: none;
+    grid-template-columns: repeat(4,1fr);
+    width: 100vw;
+    position: absolute;
+    bottom: 0px;
+    border-top: solid black 1px;
+    background-color: $primary-background;
+    border-top: solid $primary-border 2px;
+    border-bottom: solid $primary-border 2px;
+    .nav-opt{
+        display: grid;
+        place-items: center;
+        padding: .5rem;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .bottom-nav{
+        display: grid;
+    }
+}

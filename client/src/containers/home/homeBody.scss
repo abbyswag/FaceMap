@@ -1,48 +1,42 @@
 @import '../../App.scss';
 
-.home{
-    background-color: $base-background;
-    height: 90vh;
-    background-image: url('../../assets/img/home-gif3.gif');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+.home-body{
+    display: grid;
+    grid-template-rows: 1fr  2fr 1fr;
+    overflow: hidden;
+    height: 84vh;
     .content{
-        margin-top: -9rem;
-        color: #ffffff;
-        text-align: center;
+        color: $primary-color;
         .first-para{
             font-size: 4rem;
-        }
-        .second-para{
-            margin-top: -3rem;
-            font-size: 1.1rem;
+            margin-top: 1rem;
+            display: none;
         }
     }
     .status{
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
         .status-bar{
             margin: 3rem 3rem;
         }
     }
-    .btn{
-        margin-bottom: 3rem;
-        padding: 0.8rem 1.3rem;
-        background-color: $btn-background;
-        border-radius: 3px;
-        font-weight: 600;
-        transition: all .4s;
-        cursor: pointer;
-        .link{
-            color: black;
-        }
+    .btn-wrapper{
+        display: grid;
+        place-items: center;
     }
-    .btn:hover{
-        background-color: $hover-backgroud;
+}
+
+@media screen and (max-width:700px){
+    .home-body{
+        grid-template-rows: 2fr 1fr;
+        .status{
+            display: none;
+        }
+        .content{
+            .first-para{
+                font-size: 2rem;
+                display: block;
+            }
+        }
     }
 }

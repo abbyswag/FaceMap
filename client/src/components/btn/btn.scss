@@ -3,9 +3,8 @@
 .btn{
     background-color: $btn-background;
     padding: .5rem 1rem;
-    color: $base-background;
     font-weight: 600;
-    width: fit-content;
+    border: solid $primary-border 2px;
     border-radius: 3px;
     cursor: pointer;
     .link{

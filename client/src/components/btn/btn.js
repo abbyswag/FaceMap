@@ -5,12 +5,12 @@ import './btn.scss'
 class Btn extends React.Component{
     render(){
         return(
-            <div className='btn'>
+            <button className='btn'>
                 <Link to={this.props.link}
                     className='link'>
                     {this.props.name}    
                 </Link>
-            </div>
+            </button>
         )
     }
 }

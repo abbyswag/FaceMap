@@ -66,3 +66,12 @@ def getResult():
     return {
         'list': db.getTopUser(6)
     }
+
+@app.route('/user/search')
+def getQuery():
+    if request.method == 'POST':
+        data = request.json
+        query = data['query']
+    return {
+        'user': db.getUser(query)
+    }

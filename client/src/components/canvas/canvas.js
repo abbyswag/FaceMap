@@ -12,13 +12,13 @@ class Canvas extends React.Component{
         let image = new Image()
         image.src = this.props.imgURL
         image.onload = () => {
-            context.drawImage(image,0,0,300,300)    
+            context.drawImage(image,0,0,canvas.width,canvas.height)    
         }
     }
 
     render(){
         return(
-            <canvas ref={this.canvasRef} width={300} height={300} />
+            <canvas ref={this.canvasRef}/>
         )
     }
 }

@@ -1,27 +1,30 @@
 @import '../../App.scss';
 
 .opt-card{
-    background-color: $third-background;
+    background-color: $secondary-background;
     width: 250px;
+    height: 380px;
+    overflow-y: scroll;
     border-radius: 5px;
     // padding: .5rem 1rem;
     .opt{
-        color:$main-color;
+        color:$primary-color;
         text-align: center;
         padding: .5rem;
         cursor: pointer;
         transition: all .4s;
     }
     .opt:hover{
-        background-color: $second-background;
+        // background-color: $second-background;
         border-radius: 3px;
     }
 }
 
 .card{
-    background-color: $third-background;
+    // background-color: $third-background;
     border-radius: 9px;
     width: 250px;
+    height: 350px;
     opacity: .8;
     transition: all .4s;
     // height: 375px;
@@ -34,13 +37,13 @@
     .content{
         // height: 125px;
         border-radius: 0 0 9px 9px;
-        background-color: $second-background;
-        color: $main-color;
+        background-color: $secondary-background;
+        color: $primary-color;
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
         transition: all .4s;
         // padding: 1rem;
-        opacity: .8;
+        opacity: 1;
         .data{
             // margin-bottom: 1rem;
             padding: .5rem 1rem;
@@ -53,7 +56,7 @@
                 font-weight: 500;
             }
             .score{
-                color: $extra-color;
+                // color: $extra-color;
                 font-weight: 600;
                 span{
                     font-size: .9rem;
@@ -71,7 +74,7 @@
                 text-align: center;
                 padding: .5rem 0;
                 background-color: $btn-background;
-                color: $btn-color;
+                color: $secondary-color;
                 border-radius: 5px;
             }
 
@@ -94,4 +97,13 @@
 }
 .card:hover{
     opacity: 1;
+}
+
+@media screen and (max-width: 700px){
+    .card{
+        margin-bottom: 4rem;
+    }
+    .opt-card{
+        margin-bottom: 2rem;
+    }
 }

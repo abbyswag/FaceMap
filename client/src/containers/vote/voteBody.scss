@@ -1,7 +1,7 @@
 @import '../../App.scss';
 
 .vote-body{
-    background-color: $base-background;
+    // background-color: $base-background;
     background-image: url(../../assets/img/home-gif3.gif);
     background-size: cover;
     background-repeat: no-repeat;
@@ -22,5 +22,17 @@
         display: flex;
         justify-content: space-evenly;
         margin: 2rem 2rem;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .vote-body{
+        overflow-y: scroll;
+        .opts{
+            .btns{
+                display: none;
+            }
+        }
     }
 }

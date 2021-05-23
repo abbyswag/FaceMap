@@ -1,0 +1,20 @@
+@import '../../App.scss';
+
+.body{
+    display: block;
+    background-color: $primary-background;
+    height: 90.5vh;
+    overflow: hidden;
+    background-image: url('../../assets/img/animation-croped.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: center;
+}
+
+@media screen and (max-width:700px){
+    .body{
+        height: 83.5vh;
+        background-size: auto;
+    }
+}

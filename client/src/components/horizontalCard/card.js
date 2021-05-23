@@ -41,10 +41,17 @@ class HorizontalCard extends React.Component{
     }
 
     selectCareer(event){
-        this.setState({
-            isCareerBtnClicked: false,
-            selectedCareer:event.target.innerHTML
-        })
+        if(event.target.innerHTML === 'Select Career'){
+            this.setState({
+                isCareerBtnClicked : false
+            })
+        }
+        else{
+            this.setState({
+                isCareerBtnClicked: false,
+                selectedCareer:event.target.innerHTML
+            })
+        }
     }
 
     showCareers(){

@@ -89,3 +89,17 @@ class DbHandler:
 
     def getTopUserName(self):
         return self.getTopUser(1)[0]['name']
+
+    def getUser(self,query):
+        result = {
+                'message': 'user not found'
+            }
+        for user in self.users:
+            if user['name'] == query:
+                result = {
+                    'name': user['name'],
+                    'score': user['score'],
+                    'imagePath': user['image'],
+                    'rank': self.users.index(user)
+                }
+        return result

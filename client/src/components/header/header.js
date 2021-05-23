@@ -3,36 +3,54 @@ import {Link } from "react-router-dom";
 import './header.scss'
 
 class Header extends React.Component{
+    constructor(){
+        super()
+        this.navOpts=[
+            ['/user','Vote'],
+            ['/user/result','Result'],
+            ['/shedule','Shedule'],
+            ['/about','AboutUs']
+        ]
+    }
     render(){
         return(
             <div className = 'header'>
               <div className = 'app-name'>
-                    <Link to="/"
-                    className = 'link'>
-                        FaceMask
+                    <Link
+                    className='link'
+                    to='/'>
+                        ForTeller
                     </Link>
                 </div>
                 <div className = 'nav-bar'>
-                    <Link to="/vote"
-                    className = 'link nav-opt'>
-                        Vote
-                    </Link>
-                    <Link to='/result'
-                    className = 'link nav-opt'>
-                        Result
-                    </Link>
-                    <Link to='/schedule'
-                    className = 'link nav-opt'>
-                        Schedule
-                    </Link>
-                    <Link to='/about'
-                    className='link nav-opt'>
-                        About Us
-                    </Link>
+                    {this.navOpts.map((opt,index) => {
+                        return(
+                            <NavOpt
+                            link={opt[0]}
+                            name={opt[1]}
+                            />
+                        )                        
+                    })}
                 </div>
             </div>
         )
     }
 }
+
+
+class NavOpt extends React.Component{
+    render(){
+        return(
+            <div className='nav-opt'>
+                <Link
+                className='link'
+                to={this.props.link}>
+                    {this.props.name}
+                </Link>
+            </div>
+        )
+    }
+}
+
 
 export default Header

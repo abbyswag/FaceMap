@@ -1,19 +1,35 @@
-// background colors
-$base-background : #000000;
-$btn-background : #D9C9C9;
-$second-background:#333333;
-$third-background : #684C4C;
-$hover-backgroud : #48bf61;
+// colors
 
-// font colors
-$main-color: #D9C9C9;
-$extra-color: #48bf61;
+$primary-background:#000000;
+$secondary-background:#333333;
+
+$primary-hover-background:#ffffff;
+$primary-hover-color:#000000;
+
+$primary-border:#ffffff;
+$secondary-border:#000000;
+
+$primary-color:#ffffff;
+$secondary-color:#000000;
+
+$btn-background:#ffffff;
+$extra-color: #d6d661;
+// fonts
+
+$primary-font:sans-serif;
+
+// links
 $link-color: blue;
-$btn-color: #000000;
-
-// default styles
 
 .link{
     text-decoration: none;
-    color: #ffffff;
+    color: $primary-color;
+}
+
+// default
+
+*{
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }

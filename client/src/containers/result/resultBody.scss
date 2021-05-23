@@ -1,13 +1,13 @@
 @import '../../App.scss';
 
 .result-body{
-    background-color: $base-background;
+    // background-color: $base-background;
     background-image: url('../../assets/img/home-gif3.gif');
     background-size: cover;
     background-repeat: no-repeat;
     height: 90vh;
     .notice{
-        color: $main-color;
+        color: $primary-color;
         opacity: .8;
         text-align: center;
         padding: 1rem;
@@ -20,9 +20,9 @@
         input{
             padding: .5rem;
             font-size: .9rem;
-            background-color: $base-background;
-            border: solid $btn-background 2px;
-            color: $main-color;
+            // background-color: $base-background;
+            // border: solid $btn-background 2px;
+            color: $secondary-color;
             width: 30%;
             border-radius: 3px 0 0 3px;
         }
@@ -34,7 +34,7 @@
             background-color: $extra-color;
         }
         .btn:active{
-            border: inset $second-background 2px;
+            border: inset $secondary-background 2px;
         }
     }
     .lable{
@@ -48,5 +48,24 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(1fr, 5);
+    }
+}
+
+@media screen and (max-width:700px){
+    .result-body{
+        overflow-y: scroll;
+        .results{
+            grid-template-columns: 1fr;
+            margin-bottom: 4rem;
+        }
+        .notice{
+            display: none;
+        }
+        .search{
+            margin-top: 2rem;
+            input{
+                width: 60%;
+            }
+        }
     }
 }

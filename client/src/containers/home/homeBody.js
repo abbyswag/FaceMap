@@ -1,6 +1,7 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import StatusBar from '../../components/statusBar/statusBar'
+import Btn from '../../components/btn/btn'
 import './homeBody.scss'
 
 class HomeBody extends React.Component{
@@ -29,7 +30,7 @@ class HomeBody extends React.Component{
 
     render(){
         return(
-            <div className = 'home'>
+            <div className = 'home-body'>
                 <div className='status'>
                     <StatusBar
                     lable='TotalUsers'
@@ -50,17 +51,14 @@ class HomeBody extends React.Component{
                 </div>
                 <div className = 'content'>
                     <p className = 'first-para'>
-                        ELSOC Presents FaceMask
-                    </p>
-                    <p className = 'second-para'>
-                        A Fun event for guessing the career of your collegemates and friends.
+                        ELSOC Presents...
                     </p>
                 </div>
-                <div className = 'btn'>
-                    <Link to='/user/register'
-                    className='link'>
-                        Join Contest
-                    </Link>
+                <div className = 'btn-wrapper'>
+                    <Btn
+                    link='/user/register'
+                    name='Join Contest'
+                    />
                 </div>
             </div>
         )
